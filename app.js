@@ -28,3 +28,35 @@ function buildTable(data) {
     });
 
 }-
+
+function handleClick() {
+    //the .select() function is a very common one used in D3. It will select 
+    //the very first element that matches our selector string: "#datetime". 
+    //The selector string is the item we're telling D3.js to look for. 
+    //With d3.select("#datetime"), for example, we're telling D3 to look for
+    //the #datetime id in the HTML tags. 
+    //chaining .property("value"); to the d3.select function, we're telling D3
+    //not only to look for where our date values are stored on the webpage, but 
+    //to actually grab that information and hold it in the "date" variable 
+    let date = d3.select("#datetime").property("value");
+    let filteredData = tableData; //refernece the const tableData = data
+
+    // pseudocode
+    //if (a date is entered) {
+        //Filter the default data to show only the date entered
+        //};
+        //Show only the rows where the date is equal to the date 
+        //filter we created above.
+    if (date) {
+        filteredData = filteredData.filter(row => row.datetime === date);
+    };
+
+       // Rebuild the table using the filtered data
+    // @NOTE: If no date was entered, then filteredData will
+    // just be the original tableData.
+    buildTable(filteredData);
+}
+  //runs handleClick function
+d3.selectAll("#filter-btn").on("click", handleClick);
+  // Build the table when the page loads
+buildTable(tableData);
