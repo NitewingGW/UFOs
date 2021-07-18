@@ -1,0 +1,13 @@
+body {
+    /* light text applied to the full body */
+    color: #f7f7f7;
+    /* dark background on entire page */
+    
+
+      }
+      .jumbotron {
+        background-image: url("../images/nasa.jpg");
+        background-size: 100% 100%;
+        text-align: center;
+        
+  }
