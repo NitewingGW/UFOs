@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"UFO Finder"</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<!-- <body> #store componets here
+    #The wrapper class adds a bit of extra functionality to Bootstrap. 
+    #It helps group the elements (e.g., title, paragraph, table, and 
+    #filters) and specifies the styling in our stylesheet. -->
+    <div class="wrapper">
+        <!-- #nav bar section...navbar always at the top. expand-lg auto resive by window size -->
+        <nav class="navbar navbar-expand-lg"> 
+            <!-- #reset to default page/unfiltered table by referencing index.html. Brand helps with default styling  -->
+            <a class="navbar-brand" href="index.html">UFO Sightings</a>
+
+        </nav>
+        <!-- large banner -->
+        <div class="jumbotron"> 
+            <h1>The Truth Is Out There</h1>
+          </div>
+          <!-- Adding "container-fluid" to the div will ensure that both elements
+          we're adding will span the width of the viewport. The "row" class 
+          makes sure that the title and paragraph will align neatly along the 
+          page. -->
+        <div class="container-fluid"> 
+            <div class="row">
+                <!-- assign four columns to the article title and the remaining eight to the -->
+                <!-- paragraph -->
+                <div class="col-md-4">
+                    <h3>UFO Sightings: Fact or Fancy? <small>Ufologists Weigh In</small></h3>
+        
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Are we alone in the universe? For millennia, humans have turned to the sky to answer this question. Now, thanks to research generously funded by W. Avy, a UFO-enthusiast and amateur ufologist, we can supplement our sky-searching with data analysis.
+        
+        "The release of this analysis is well-timed: It coincides with the celebration of World UFO Day, which is a moment for ufologists around the world to connect, relax, and sample a range of UFO-themed snacks," said Dr. Ursula F. Olivier, the world's preeminent expert on circular sightings. "Citizen-scientists can be especially helpful in both cataloguing sightings—which is hugely helpful for us in our search for aliens—and in helping us celebrate the work that has already been done, such as this data visualization project, which will help us raise awareness of the ubiquity of sightings!"
+        
+        Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien activist V. Isualize reached out to our reporters to go on record as firmly opposed to any attempts to provide access to this data. "If there are aliens, they certainly would like to be left alone," she stated, before directing us to the Leave Aliens Alone (LAA) community engagement initiative she founded and funds.
+        
+        So what do YOU think? Are we alone in the universe? Are aliens trying to contact us, or do they want to be left alone? Dig through the data yourself, and let us know what you see.    
+                    </p>
+            </div>
+        </div>
+        <!-- Adding user input and data filter -->
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3">
+                <form>
+                    <!-- Assign the button from javascript file need to add an input box for a date. We'll also need the button that we referenced (#filter-btn) so that searches can be executed -->
+                    <p>Filter Search</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <label for="date">Enter Date</label>
+
+                            <!-- 1. The type="text" means that the code will look for text to be input.
+                            2. The placeholder is an example of a date to search, so users know both the 
+                            location and the format to use when inputting a date.
+                            3. The id="datetime" is what our JavaScript code will look for when the button 
+                            is clicked and the function is executed. -->
+                            <input type="text" placeholder="1/10/2010" id="datetime" />
+                        </li>
+                        <li class="list-group-item">
+                            <!-- type="button" tells the browser that, by default, the button does nothing. 
+                            However, our custom JavaScript script will overwrite the default behavior—as
+                            if the button is waiting for instruction.
+
+                            The class="btn btn-default" attribute adds some Bootstrap styling to the mix
+                            to help keep the element neat and tidy. Finally, we've named our button "Filter Table," 
+                            by nesting it between the opening and closing button tags -->
+                            <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                        </li>
+
+                    </ul>
+                  </form>
+              </div>
+              <!-- PREP the data for the table... LIST SAMPLE DATA BELOW USE TO SHAPE TABLE. 
+                MUST USE <th? for each element-->
+              <!-- {
+                datetime: "1/1/2010",
+                city: "benton",
+                state: "ar",
+                country: "us",
+                shape: "circle",
+                durationMinutes: "5 mins.",
+                comments: "4 bright green circles high in the sky going in circles then one bright green light at my front door."
+              }, -->
+              <div class="col-md-9">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Country</th>
+                        <th>Shape</th>
+                        <th>Duration</th>
+                        <th>Comments</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+    
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</body>
+</html>
